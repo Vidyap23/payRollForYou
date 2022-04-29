@@ -1,0 +1,151 @@
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+
+@mixin center-div() {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+@mixin loading-spinner($radius) {
+	$loader-background: transparent;
+	$loader-foreground: #252731;
+	$loader-dimension: $radius;
+	$loader-section-dimension: 0.4rem;
+
+	@keyframes animate-loader {
+		from {
+			transform: rotate(0deg);
+		}
+
+		to {
+			transform: rotate(360deg);
+		}
+	}
+
+	.loader,
+	.loader::before {
+		border-radius: 50%;
+		width: $loader-dimension;
+		height: $loader-dimension;
+	}
+
+	.loader {
+		border-left: $loader-section-dimension solid $loader-background;
+		border-right: $loader-section-dimension solid $loader-background;
+		border-bottom: $loader-section-dimension solid $loader-background;
+		border-top: $loader-section-dimension solid $loader-foreground;
+		animation: animate-loader linear 0.5s infinite;
+	}
+}
+
+@mixin hover-supported {
+	@media not all and (hover: none) {
+		&:hover {
+			@content;
+		}
+	}
+}
+
+@mixin hover-unsupported {
+	@media not all and (hover: hover) {
+		@content;
+	}
+}
+
+@mixin button-onhover {
+	.ant-btn,
+	.ant-btn:focus,
+	.ant-btn:active {
+		color: $customer-profile-text;
+		border: 1px solid;
+		border-color: transparent;
+		box-shadow: 0 0px 0;
+	}
+
+	.ant-btn:hover {
+		color: $customer-profile-text;
+		border-color: rgba(51, 51, 51, 0.3);
+	}
+}
+
+@mixin soft-saveBtn($hover-color) {
+	.ant-btn,
+	.ant-btn :focus,
+	.ant-btn :active {
+		line-height: 2.7;
+		height: 40px;
+		border: 0.7px solid rgba(51, 51, 51, 0.12) !important;
+		color: rgba(0, 0, 0, 0.65);
+	}
+
+	.ant-btn:hover {
+		background-color: $hover-color;
+		border-color: $hover-color;
+		color: white;
+	}
+}
+
+@mixin primary-btn() {
+	background-color: $color-primary;
+	color: $color-white;
+	border: none;
+
+	&:hover,
+	&:visited,
+	&:active,
+	&:focus {
+		border: none;
+	}
+
+	&:disabled,
+	&[disabled] {
+		color: $color-white;
+		background-color: $color-primary;
+		opacity: 0.65;
+		cursor: not-allowed;
+	}
+}
+
+@mixin primary-light-btn() {
+	background-color: $color-white;
+	color: $color-primary;
+	border: 1px solid $color-primary;
+
+	&:hover,
+	&:visited,
+	&:active,
+	&:focus {
+		border: 1px solid $color-primary;
+	}
+}
+@mixin primary-light-red() {
+	background-color: $color-white;
+	color: $color-error;
+	border: 1px solid $color-error;
+
+	&:hover,
+	&:visited,
+	&:active,
+	&:focus {
+		border: 1px solid $color-error;
+	}
+}
+@mixin create-btn() {
+	background-color: $color-primary;
+	color: $color-white;
+	border: none;
+	padding: 7px 18px;
+	font-size: 14px;
+	height: 38px;
+	width: auto;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+	}
+}

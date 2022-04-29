@@ -1,0 +1,87 @@
+<form nz-form [formGroup]="employeeForm">
+	<div nz-row>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">Employee ID</span></nz-form-label>
+				<nz-form-control nzErrorTip="Please enter the employeeId">
+					<input style="width: 100%" nz-input type="text" formControlName="employeeId" />
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+		<div nz-col [nzSpan]="4"></div>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">email</span></nz-form-label>
+				<nz-form-control nzErrorTip="Please enter the email">
+					<input style="width: 100%" nz-input type="text" formControlName="email" />
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+	</div>
+	<div nz-row>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">Department</span></nz-form-label>
+				<nz-select formControlName="department" nzPlaceHolder="Choose Department">
+					<nz-option nzLabel="IT" nzValue="IT"></nz-option>
+					<nz-option nzLabel="Support" nzValue="Support"></nz-option>
+					<nz-option nzLabel="Housekeeping" nzValue="Housekeeping"></nz-option>
+				</nz-select>
+			</nz-form-item>
+		</div>
+		<div nz-col [nzSpan]="4"></div>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">First Name</span></nz-form-label>
+				<nz-form-control nzErrorTip="Please enter first name of the employee">
+					<input style="width: 100%" nz-input type="text" formControlName="firstName" />
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+	</div>
+	<div nz-row>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">Last Name</span></nz-form-label>
+				<nz-form-control nzErrorTip="Please enter last name of the employee">
+					<input style="width: 100%" nz-input type="text" formControlName="lastName" />
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+		<div nz-col [nzSpan]="4"></div>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">Joining Date</span></nz-form-label>
+				<nz-form-control nzErrorTip="Please enter joining date of the employee">
+					<nz-date-picker class="input" formControlName="joiningDate"></nz-date-picker>
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+	</div>
+	<div nz-row>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">Salary per annum</span></nz-form-label>
+				<nz-form-control nzErrorTip="Please enter salary per annum of the employee">
+					<input style="width: 100%" nz-input type="text" formControlName="salaryPerAnnum" />
+				</nz-form-control>
+			</nz-form-item>
+		</div>
+		<div nz-col [nzSpan]="4"></div>
+		<div nz-col [nzSpan]="10">
+			<nz-form-item>
+				<nz-form-label><span class="form-label">Salary status for this month</span></nz-form-label>
+				<nz-select formControlName="payrollstatusPresentmonth" nzPlaceHolder="Choose status">
+					<nz-option nzLabel="paid" nzValue="paid"></nz-option>
+					<nz-option nzLabel="unpaid" nzValue="unpaid"></nz-option>
+				</nz-select>
+			</nz-form-item>
+		</div>
+	</div>
+</form>
+<div nz-row>
+	<button (click)="submitForm()" nz-button class="form-button form-margin" [nzType]="'primary'">
+		<span *ngIf="employeeId === ''">Save</span>
+		<span *ngIf="employeeId != ''">Edit</span>
+	</button>
+</div>

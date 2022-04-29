@@ -1,0 +1,90 @@
+<div class="bootstrap-wrapper">
+	<div class="container-fluid">
+		<div class="center-div"></div>
+		<div class="box">
+			<div nz-row [nzGutter]="16" class="login">
+				<div nz-col [nzXs]="0" [nzSm]="8" [nzMd]="12" class="d-none d-md-block login-left">
+					<h1 class="login-left_tagline">PayRollApp<br /></h1>
+					<h4 class="login-left_description">Find all your employees and their payroll details in one click.</h4>
+					<div class="login-left_illustration">
+						<img src="./../../../assets/images/login-image.svg" width="90%" height="80%" />
+					</div>
+				</div>
+				<div nz-col [nzXs]="24" [nzSm]="16" [nzMd]="12" class="login-right">
+					<nz-card class="login-right__card">
+						<div class="login-right__heading">
+							<div>
+								<h2 class="login-right_tagline">Log into PayRollForYou</h2>
+								<form *ngIf="!showSignUpForm" nz-form class="form" [formGroup]="loginForm" (ngSubmit)="loginUser()">
+									<nz-form-item>
+										<span>Email</span>
+										<nz-form-control class="error-text" nzErrorTip="The input is not valid E-mail!">
+											<input nz-input formControlName="email" id="email" />
+										</nz-form-control>
+									</nz-form-item>
+									<nz-form-item>
+										<span>Password</span>
+										<nz-form-control nzErrorTip="Please input your Password!">
+											<input nz-input type="password" formControlName="password" id="pass" />
+										</nz-form-control>
+									</nz-form-item>
+
+									<nz-form-item>
+										<nz-form-control class="center">
+											<button id="btn" class="btn btn-success btn-block center">
+												<b>Log in</b>
+											</button>
+										</nz-form-control>
+									</nz-form-item>
+								</form>
+								<form *ngIf="showSignUpForm" nz-form class="form" [formGroup]="signupForm" (ngSubmit)="registerUser()">
+									<nz-form-item>
+										<span>User Name</span>
+										<nz-form-control class="error-text" nzErrorTip="Please enter your name">
+											<input nz-input formControlName="userName" id="userName" />
+										</nz-form-control>
+									</nz-form-item>
+									<nz-form-item>
+										<span>Employer ID</span>
+										<nz-form-control class="error-text" nzErrorTip="Please enter your employer ID">
+											<input nz-input formControlName="employerId" id="employerId" />
+										</nz-form-control>
+									</nz-form-item>
+									<nz-form-item>
+										<span>Email</span>
+										<nz-form-control class="error-text" nzErrorTip="The input is not valid E-mail!">
+											<input nz-input formControlName="email" id="email" />
+										</nz-form-control>
+									</nz-form-item>
+									<nz-form-item>
+										<span>Create a password</span>
+										<nz-form-control nzErrorTip="Please input your Password!">
+											<input nz-input type="password" formControlName="password" id="pass" />
+										</nz-form-control>
+									</nz-form-item>
+									<br />
+									<nz-form-item>
+										<nz-form-control class="center">
+											<button id="btn" class="btn btn-success btn-block center">
+												<b>SignUp</b>
+											</button>
+										</nz-form-control>
+									</nz-form-item>
+								</form>
+							</div>
+						</div>
+
+						<div class="login-right--options">
+							<h4>Don't have an account?</h4>
+							<div>
+								<a (click)="showForm()">Sign up now </a>
+                <span>OR</span>
+								<a (click)="showLoginForm()"> Login </a>
+							</div>
+						</div>
+					</nz-card>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

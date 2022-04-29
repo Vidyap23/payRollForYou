@@ -1,0 +1,57 @@
+.card {
+  height: 60%;
+  width: 100%;
+  margin-bottom: 8%;
+  padding: 0;
+}
+
+.form {
+  text-align: left;
+}
+
+.submit {
+  padding-right: 10px;
+  display: block;
+  float: right;
+}
+
+.add-btn-css {
+  margin-right: 8px;
+  margin-bottom: 12px;
+  border: 2px solid;
+  margin: 0 auto;
+  display: block;
+}
+
+.add-btn {
+  position: absolute;
+  margin-top: -43px;
+  right: 15px;
+}
+.logout{
+  position: absolute;
+  margin-top: -43px;
+  right: 70px;
+}
+
+.ant-btn-round{
+  border-radius: 7px;
+}
+
+.actions {
+  font-size: medium;
+  margin-right: 5px;
+}
+.empty_page{
+   display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-left: 8rem;
+
+    &__text {
+        padding: 30px;
+        font-size: 15px;
+        font-weight: 500;
+        color: #333333c7;
+ }
+}

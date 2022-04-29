@@ -1,0 +1,5 @@
+@import 'variables';
+
+::ng-deep .ant-spin-dot-item {
+	background-color: $color-primary;
+}

@@ -1,0 +1,81 @@
+.form{
+    justify-content: center;
+    &-group{
+        &__input{
+            padding: 1rem 1.5rem !important;
+            border: 1px solid $color-grey-light-4;
+            border-radius: 4px;
+            font-size: 1.5rem;
+            transition: all .5s;
+            color: $color-grey-dark-1;
+            &:focus{
+                outline: none;      
+            }
+
+
+            &::-webkit-input-placeholder {
+                color: $color-grey-dark-2;
+                font-size: 1.4rem;
+            }
+
+            &:focus-within {
+                .form-group__label {
+                    color: $color-primary;
+                }
+            }
+        }
+
+
+
+        &__label {
+            padding: 0;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: .7rem;
+            transition: all .2s;
+            color: $color-grey-dark-1;
+        }
+
+        &__input::-webkit-input-placeholder {
+            -webkit-transition: all .3s ease-in-out;
+            /* For Safari 3.1 to 6.0 */
+            transition: all .3s ease-in-out;
+            opacity: 1;
+            transform-origin: left center;
+        }
+
+        &__input:focus::-webkit-input-placeholder {
+            transform: scaleX(0);
+            opacity: 0;
+
+            // overflow: hidden;
+
+
+
+        }
+    }
+}
+
+.whatsapp-card > .ant-card-body, .whatsapp-template > .ant-card-body {
+    padding: 0 !important;
+  }
+
+  .ant-card-body {
+      padding: 30px 12px;
+  }
+
+  .ant-btn + .delete  {
+    &:hover {
+      color: red;
+      border-color: red;
+    }
+  }
+
+  .ant-btn + .clone  {
+    &:hover {
+      color: #f0b518;
+      border-color: #f0b518;
+    }
+  }
+
+  

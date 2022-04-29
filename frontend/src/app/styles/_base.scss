@@ -1,0 +1,170 @@
+/***********************/
+/*  Layout  By Loyalytics    */
+/***********************/
+
+@import 'variables';
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+	@media only screen and (max-width: $bp-large) {
+		font-size: 50%;
+	}
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-size: 1.6rem;
+	font-weight: 200;
+	line-height: 1.6;
+	color: $color-grey-dark-1;
+	min-height: 100vh;
+	overflow: hidden;
+
+	::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+
+	::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+		background-color: $color-white;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: darken($color-grey-light-3, 5%);
+	}
+}
+
+a,
+a:link,
+a:visited {
+	text-decoration: none;
+	color: $color-grey-dark-1;
+
+	&:hover {
+		cursor: pointer !important;
+	}
+}
+
+ul,
+li {
+	list-style: none;
+}
+
+.margin-bottom-small {
+	margin-bottom: 2rem !important;
+}
+
+.margin-bottom-medium {
+	margin-bottom: 4rem !important;
+}
+
+.margin-bottom-big {
+	margin-bottom: 8rem !important;
+}
+
+.margin-top-small {
+	margin-top: 2rem !important;
+}
+
+.margin-top-big {
+	margin-top: 8rem !important;
+}
+
+.margin-top-medium {
+	margin-top: 4rem !important;
+}
+
+.margin-top-huge {
+	margin-top: 10rem !important;
+}
+
+.margin-right-small {
+	margin-right: 2rem !important;
+}
+
+.margin-right-big {
+	margin-right: 8rem !important;
+}
+
+.margin-right-huge {
+	margin-right: 10rem !important;
+}
+
+[class^='col-'] {
+	padding: 0;
+	margin: 0;
+}
+
+.container-fluid {
+	padding: 0;
+}
+
+.row {
+	padding: 0;
+	margin: 0;
+}
+
+.text-danger {
+	color: red;
+}
+
+.error {
+	color: $color-error;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
+}
+
+.feature-title {
+	padding: 30px;
+	font-size: 30px;
+}
+
+#whiteBack {
+	height: 150px;
+	position: absolute;
+	top: 300px;
+	left: 50%;
+	background-color: #f2f2f2;
+	width: 620px;
+}
+
+#welcomeImage {
+	margin-top: 150px;
+	margin-left: calc(50% - 479px);
+	height: 300px;
+}
+
+#welcomeInfo {
+	padding: 34px 55px;
+	position: relative;
+	top: -280px;
+	left: 40%;
+	background-color: rgba(25, 25, 25, 0.05);
+	backdrop-filter: blur(6px);
+	width: 700px;
+
+	h2 {
+		color: rgba(0, 0, 0, 0.6);
+		font-weight: 700;
+	}
+}

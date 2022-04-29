@@ -1,0 +1,56 @@
+<nz-card class="card" nzTitle="All employee details">
+	<div class="logout">
+	<button class="add-btn-css" nz-button nzType="default" class="add-btn-css" (click)="logout()" nzShape="round">
+		<span>Logout</span>
+	</button>
+</div>
+	<div class="add-btn">
+		<button nz-button nzType="default" class="add-btn-css" (click)="showModal('create', '')" nzShape="round">
+			<span>+</span>
+		</button>
+	</div>
+
+	<div *ngIf="listOfDisplayData.length>0" nz-row>
+		<h4>Filter table results by department</h4>
+		<input
+			type="text"
+			style="width: 20%"
+			[(ngModel)]="searchValue"
+			(ngModelChange)="onSearch($event)"
+			nz-input
+			placeholder="Search"
+		/>
+		<nz-table #tableData nzEllipsis [nzData]="listOfDisplayData" class="table" [nzPageSize]="5">
+			<thead (nzSortChange)="sort($event)">
+				<tr>
+					<th *ngFor="let data of listOfColumn" nzShowSortChange nzWidth="200px">{{ data.value }}</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let data of tableData.data">
+					<td>{{ data.employeeId }}</td>
+					<td>{{ data.department }}</td>
+					<td>{{ data.firstName }}</td>
+					<td>{{ data.lastName}}</td>
+					<td>{{ data.salaryPerAnnum }}</td>
+					<td>{{ data.payrollstatusPresentmonth }}</td>
+					<td>
+						<button nz-button class="actions add" nzShape="round" (click)="showModal('edit', data.employeeId)">
+							<i nz-icon nzType="edit" nzTheme="outline"></i>
+						</button>
+						<button nz-button class="actions add" nzShape="round" (click)="delete(data.employeeId)">
+							<i nz-icon nzType="delete" nzTheme="outline"></i>
+						</button>
+					</td>
+				</tr>
+			</tbody>
+		</nz-table>
+	</div>
+	<div class="empty_page" *ngIf="listOfDisplayData.length== 0">
+		<img src="../../../assets/images/empty.svg" style="width: 60%; height: 60%" />
+		<div>
+			<h2 class="empty_page__text">No employee details were found, add some to get started</h2>
+			<br />
+		</div>
+	</div>
+</nz-card>
